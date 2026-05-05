@@ -1,23 +1,17 @@
 import { test, expect } from '@playwright/test';
-import {Loginpage} from '../Page/login'
-import { Selectitems } from '../Page/Selectitem';
-import { checkout } from '../Page/checkout';
+import { PageManager } from '../Page/PageManager';
 
 test('test', async ({ page }) => {
-    const Login = new Loginpage(page)
-    const selectitem = new Selectitems(page)
-    const check = new checkout(page)
+    const PageInstance = new PageManager(page)
     
-    await Login.LaunchURL()
-    await Login.login('standard_user','secret_sauce')
-    await selectitem.Selectcorder()
-    await check.checkout_product('basava','raj',2637)
-   
+    
+    await PageInstance .getLogin().LaunchURL()
+    await PageInstance .getLogin().login('standard_user','secret_sauce')
 
+    await PageInstance.getSelectitems().Selectcorder()
 
- 
+    await PageInstance.getcheckout().checkout_product('basava','raj','2637')
 
-
-//   //confirmation
-//   await page.locator('[data-test="back-to-products"]').click();
+    await PageInstance.getconfirmorder().confirmation()
+    await PageInstance.getLogin().Logout()
  });
