@@ -78,10 +78,7 @@ test.only('Login to application',async ({page})=>{
     }
     
 
-
-    ~~
     await page.locator('text=checkout').click()
-
 
     /*
    

@@ -1,10 +1,44 @@
 import { test, expect } from '@playwright/test';
 import user from '../TestData/user.json';
-test('Onlineshopping', async ({ page }) => {
+test('Onlineshopping', async ({ browser }) => {
+
+    const Browser = await browser.newContext()
+    const page = await Browser.newPage()
  
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
-  
+   
     await page.locator('p[class="login-wrapper-footer-text"] a').click()
+
+    //==============Mandatory Field Validations================
+
+     const validationMessages = [
+    '*First Name is required',
+    '*Email is required',
+    '*Phone Number is required',
+    '*Password is required',
+    'Confirm Password is required',
+    '*Please check above checkbox'
+  ];
+  await page.locator('[value="Register"]').click()
+   await validateMessages(page, validationMessages);
+
+  async function validateMessages(page, messages) {
+
+  for (const message of messages) {
+
+    await expect(page.getByText(message)).toBeVisible();
+  }
+
+}
+/*
+    await page.locator('[formcontrolname="firstName"] + .invalid-feedback').tobe
+    await page.locator('[formcontrolname="userEmail"] + .invalid-feedback')
+    await page.locator('[formcontrolname="userMobile"] + .invalid-feedback')
+    await page.locator('[formcontrolname="userPassword"] + .invalid-feedback')
+    await page.locator('[formcontrolname="confirmPassword"] + .invalid-feedback')
+
+*/
+
     await expect(page.getByRole('heading', { name: 'Practice Website for Rahul' })).toBeVisible();
     await expect(page.locator('app-register')).toContainText('Practice Website for Rahul Shetty Academy Students');
     await page.locator('[formcontrolname="firstName"]').fill(user.firstName);
@@ -14,6 +48,7 @@ test('Onlineshopping', async ({ page }) => {
     await page.locator('[formcontrolname="occupation"]').selectOption(user.occupation)
     await page.locator('[value="Male"]').check()
     await page.locator('[formcontrolname="userPassword"]').fill(user.password)
+    
     await page.locator('[formcontrolname="confirmPassword"]').fill(user.password)
     await page.locator('[formcontrolname="required"]').check()
     await page.locator('[value="Register"]').click()
@@ -23,7 +58,7 @@ test('Onlineshopping', async ({ page }) => {
 
     
   //Loginto application
-  await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
+ // await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
   await page.locator('[placeholder="email@example.com"]').fill(user.email)
   await page.locator('[placeholder="enter your passsword"]').fill(user.password)
   await page.locator('[name="login"]').click()
@@ -32,6 +67,7 @@ test('Onlineshopping', async ({ page }) => {
   //
   const title = await page.locator("div.card-body h5 b").allTextContents()
   console.log(title)
+  
 
   const ProductTitle = "iphone 13 pro"
   const products = page.locator('.card-body')
@@ -99,7 +135,7 @@ test('Onlineshopping', async ({ page }) => {
   await expect(page.locator('.hero-primary')).toHaveText('Thankyou for the order.',{ timeout: 5000 });
 
   //await page.locator('.hero-primary').waitFor();
-  const OrderId = await page.locator('label.ng-star-inserted').textContent();
+  const OrderId = await page.locator('label.ng-star-inserted').textContent()
   console.log(OrderId)
   await page.locator('nav ul').waitFor();
   expect(page.locator('button.btn-custom .fa-handshake-o')).toBeVisible();

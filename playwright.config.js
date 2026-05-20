@@ -17,17 +17,20 @@ export default defineConfig({
 
   use: {
     actionTimeout: 10000,       // max time for actions like click/fill
-    navigationTimeout: 15000,   // page loads
+    navigationTimeout: 15000,   // page loadsc
   },
 
   expect: {
     timeout: 5000, // assertions
   },
   //testDir: './tests',
-  
   testDir: './TestOnline',
+  //testDir: './KPI',
+
   /* Run tests in files in parallel */
   fullyParallel: true,
+
+  
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -39,7 +42,10 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-     video: 'on',
+    screenshot: 'on',
+    video: 'on',
+    trace: 'on',
+
      launchOptions:{
       slowMo:500,
      },
@@ -48,45 +54,24 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',// or 'on'
+    //trace: 'retain-on-failure',// or 'on'
   },
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    {name: 'chromium',use: { ...devices['Desktop Chrome'] }, },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    {name: 'firefox', use: { ...devices['Desktop Firefox'] }, },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    {name: 'webkit', use: { ...devices['Desktop Safari'] },},
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    // {name: 'Mobile Chrome',use: { ...devices['Pixel 5'] },},
+    // { name: 'Mobile Safari', use: { ...devices['iPhone 12'] },},
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    // { name: 'Microsoft Edge',use: { ...devices['Desktop Edge'], channel: 'msedge' },},
+    // { name: 'Google Chrome',use: { ...devices['Desktop Chrome'], channel: 'chrome' },},
   ],
 
   /* Run your local dev server before starting the tests */
