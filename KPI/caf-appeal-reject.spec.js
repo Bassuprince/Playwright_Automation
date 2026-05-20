@@ -16,8 +16,7 @@ test('CAF Appeal-Reject Flow', async ({ page }) => {
     const Employee = new EmployeePage(page)
     const HRmanager = new HRPage(page)
 
-
-    //manager login    
+ 
     // ================= MANAGER =================
     await Login.lanchURL()
     await Login.logintoKPIapp(userCAF.username_Mng, userCAF.password_Mng)
@@ -26,7 +25,6 @@ test('CAF Appeal-Reject Flow', async ({ page }) => {
     const cafID = await Managerpage.captureCAFIDA()
     await Login.Logout()
 
-    // Employee Login
 
     // ================= EMPLOYEE =================
     await Login.logintoKPIapp(userCAF.username_Emp, userCAF.password_Emp)
@@ -34,7 +32,6 @@ test('CAF Appeal-Reject Flow', async ({ page }) => {
     await Employee.employeeactionappeal(userCAF.appealID)
     await Login.Logout()
 
-    // HR Login
      // ================= HR =================
     await Login.logintoKPIapp(userCAF.username_HR, userCAF.password_HR)
     await HRmanager.openCAFUsingID(cafID)

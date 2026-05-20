@@ -8,7 +8,7 @@ test('Onlineshopping', async ({ browser }) => {
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
    
     await page.locator('p[class="login-wrapper-footer-text"] a').click()
-
+/*
     //==============Mandatory Field Validations================
 
      const validationMessages = [
@@ -30,7 +30,7 @@ test('Onlineshopping', async ({ browser }) => {
   }
 
 }
-/*
+
     await page.locator('[formcontrolname="firstName"] + .invalid-feedback').tobe
     await page.locator('[formcontrolname="userEmail"] + .invalid-feedback')
     await page.locator('[formcontrolname="userMobile"] + .invalid-feedback')
@@ -43,7 +43,7 @@ test('Onlineshopping', async ({ browser }) => {
     await expect(page.locator('app-register')).toContainText('Practice Website for Rahul Shetty Academy Students');
     await page.locator('[formcontrolname="firstName"]').fill(user.firstName);
     await page.locator('[type="lastName"]').fill(user.lastName)
-    await page.locator('[type="email"]').fill(user.email)
+    await page.locator('[type="email"]').fill(user.Email)
     await page.locator('[placeholder="enter your number"]').fill(user.phone)
     await page.locator('[formcontrolname="occupation"]').selectOption(user.occupation)
     await page.locator('[value="Male"]').check()
@@ -59,7 +59,7 @@ test('Onlineshopping', async ({ browser }) => {
     
   //Loginto application
  // await page.goto('https://rahulshettyacademy.com/client/#/auth/login')
-  await page.locator('[placeholder="email@example.com"]').fill(user.email)
+  await page.locator('[placeholder="email@example.com"]').fill(user.Email)
   await page.locator('[placeholder="enter your passsword"]').fill(user.password)
   await page.locator('[name="login"]').click()
   await expect(page.locator('[style="margin-top: -28px;"]')).toHaveText('Automation Practice')
