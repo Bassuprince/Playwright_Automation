@@ -1,0 +1,31 @@
+{
+    "username_Mng":"managerman789@gmail.com",
+    "password_Mng":"Akshay20*",
+    "EmployeeName":"Akshay U (ESWML006)",
+    "Category":"Disciplinary",
+    "CaseSubject": "When an employee acknowledges the CAF and enters a lengthy comment, the acknowledgment comment in the Identification Details section is displayed in full without proper formatting or truncation.",
+    "Problem_Description" :"When an employee acknowledges the CAF and enters a lengthy comment, the acknowledgment comment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification Details section",
+    "Impact":"When an employee acknowledges the CAF and enters a lengthy comment, the acknowledgment comment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification Details section.",
+    "CorrectiveActionMeasure":"accknowledgecomment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification Details section.",
+   
+
+
+    "username_Emp": "akshayidsinternal@gmail.com",
+    "password_Emp": "12345@Qwerty12345",
+    "commentA":"accknowledgecomment in the Identification Details section is displayed in full without proper",
+    "accknowledgecomment":"accknowledgecomment in the Identification Details section is displayed in full without proper",
+    "appealID":"BG-9876",
+    "employeeAction": "Appeal",
+
+
+
+
+    "username_HR":"devteam@indeadesignsystems.com",
+    "password_HR":"BDCCMc8P3yFiYl0H",
+    "comment":"accknowledgecomment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification Details section.",
+    "commentR":"When an employee acknowledges the CAF and enters a lengthy comment, the acknowledgment comment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification",
+    "CommentRsolution":"When an employee acknowledges the CAF and enters a lengthy comment, the acknowledgment comment in the Identification Details section is displayed in full without proper formatting or truncation. This causes UI alignment and layout issues within the Identification",
+    "hrAction": "Approve"
+
+   
+}

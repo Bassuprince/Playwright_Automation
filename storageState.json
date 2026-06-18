@@ -1,0 +1,49 @@
+{
+  "cookies": [
+    {
+      "name": "AUTH_SESSION_ID",
+      "value": "2d21c676-fa1f-411c-8a6b-d181df713d34",
+      "domain": "contacts-keycloak-us-qa.idsinternal.com",
+      "path": "/realms/contacts-qa-us/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "KEYCLOAK_IDENTITY",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4MWUzYjc5Yy02NmQyLTRiYzAtOGEwYi1lYWZiYzQ3Zjk2ZDAifQ.eyJleHAiOjE3ODA3MjUxMTAsImlhdCI6MTc4MDY4MTkxMCwianRpIjoiZTlhNzY3NjQtOTZhMi00NzkyLTk4ZDgtMDVjOWViYmQyNTliIiwiaXNzIjoiaHR0cHM6Ly9jb250YWN0cy1rZXljbG9hay11cy1xYS5pZHNpbnRlcm5hbC5jb20vcmVhbG1zL2NvbnRhY3RzLXFhLXVzIiwic3ViIjoiYmEyMzk0N2YtMmU0Yi00YzFjLTgyZjktY2ZkZjBmNDI5MjYwIiwidHlwIjoiU2VyaWFsaXplZC1JRCIsInNpZCI6IjJkMjFjNjc2LWZhMWYtNDExYy04YTZiLWQxODFkZjcxM2QzNCIsInN0YXRlX2NoZWNrZXIiOiI3QnMzbVpSLXMwdEUtTFV3b2hkVUsxYU01ZWoxRnhSWTZOV1UzVmkxYzQwIn0.cY9vcZIO_K5EuFap_fcPnTT7ihqeo8SfxyoU_dIMCiizxusm5jLpSeYigtsUuxtJ3Yq5sq6r0N6WUB1Oh3xIFw",
+      "domain": "contacts-keycloak-us-qa.idsinternal.com",
+      "path": "/realms/contacts-qa-us/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "KEYCLOAK_SESSION",
+      "value": "\"contacts-qa-us/ba23947f-2e4b-4c1c-82f9-cfdf0f429260/2d21c676-fa1f-411c-8a6b-d181df713d34\"",
+      "domain": "contacts-keycloak-us-qa.idsinternal.com",
+      "path": "/realms/contacts-qa-us/",
+      "expires": 1780725111.634775,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://contacts-app-qa.idsinternal.com",
+      "localStorage": [
+        {
+          "name": "contacts:last-applied-sort",
+          "value": "last_name_asc"
+        },
+        {
+          "name": "contacts:region-config",
+          "value": "{\"apiUrl\":\"https://contacts-api-us-qa.idsinternal.com/v1\",\"keycloakUrl\":\"https://contacts-keycloak-us-qa.idsinternal.com\",\"realm\":\"contacts-qa-us\",\"clientId\":\"contacts-spa\"}"
+        }
+      ]
+    }
+  ]
+}

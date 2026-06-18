@@ -1,0 +1,907 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: company.spec.js >> Contact Creation >> edit the company details
+- Location: Testcontact/company.spec.js:39:7
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('tbody tr').filter({ hasText: 'IDS-InternalF4UE' }).locator('[aria-label^="Edit"]')
+    - locator resolved to <button type="button" data-size="sm" data-slot="button" data-variant="ghost" aria-label="Edit IDS-InternalF4UE" class="inline-flex shrink-0 items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink…>…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="submit" data-slot="button" data-size="default" data-variant="default" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:n…>Create company</button> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-slot="sheet-header" class="flex shrink-0 items-start justify-between gap-3 bg-surface border-b border-border px-6 py-4">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+  6 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button type="submit" data-slot="button" data-size="default" data-variant="default" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:n…>Create company</button> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-slot="sheet-header" class="flex shrink-0 items-start justify-between gap-3 bg-surface border-b border-border px-6 py-4">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div data-slot="sheet-header" class="flex shrink-0 items-start justify-between gap-3 bg-surface border-b border-border px-6 py-4">…</div> from <div role="dialog" tabindex="-1" id="radix-_r_7v_" data-state="open" data-slot="sheet-content" aria-labelledby="radix-_r_80_" aria-describedby="radix-_r_81_" class="fixed inset-y-0 z-50 flex w-full flex-col gap-0 bg-surface shadow-xl outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 right-0 border-l border-border data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right sm:max-w-xl">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+```
+
+# Page snapshot
+
+```yaml
+- generic:
+  - generic:
+    - generic:
+      - link:
+        - /url: "#main-content"
+        - text: Skip to main content
+      - navigation:
+        - generic:
+          - generic:
+            - img
+            - generic: Contacts
+          - button [expanded]:
+            - generic: Collapse sidebar
+            - img
+        - generic:
+          - generic:
+            - generic: Workspace
+            - list:
+              - listitem:
+                - link:
+                  - /url: /
+                  - img
+                  - generic: Contacts
+              - listitem:
+                - link:
+                  - /url: /companies
+                  - img
+                  - generic: Companies
+              - listitem:
+                - link:
+                  - /url: /trash
+                  - img
+                  - generic: Trash
+              - listitem:
+                - link:
+                  - /url: /tags
+                  - img
+                  - generic: Tags
+          - generic:
+            - generic: Admin
+            - list:
+              - listitem:
+                - link:
+                  - /url: /admin/custom-fields
+                  - img
+                  - generic: Custom Fields
+              - listitem:
+                - link:
+                  - /url: /users
+                  - img
+                  - generic: User Management
+          - generic:
+            - list:
+              - listitem:
+                - link:
+                  - /url: /settings
+                  - img
+                  - generic: Settings
+      - generic:
+        - banner:
+          - link:
+            - /url: /
+            - img
+            - generic: Contacts
+          - generic:
+            - button:
+              - img
+              - generic: New
+            - link:
+              - /url: /notifications
+              - img
+              - generic: "1"
+            - button:
+              - generic: Open account menu
+              - generic: RR
+        - main:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: Companies
+                - paragraph: Click a row to view details.
+              - generic:
+                - button:
+                  - img
+                  - text: Import
+                - button:
+                  - img
+                  - text: Export
+                - button:
+                  - img
+                  - text: Add company
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - searchbox
+                - combobox:
+                  - generic: Name (A–Z)
+                  - img
+            - generic:
+              - table:
+                - rowgroup:
+                  - row:
+                    - columnheader:
+                      - checkbox
+                    - columnheader: Name
+                    - columnheader: Industry
+                    - columnheader: Website
+                    - columnheader: Country
+                    - columnheader: Linked contacts
+                    - columnheader: Actions
+                - rowgroup:
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-Internal5M1V
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-Internal6Y8F
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-Internal74NH
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalAUHG
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalEHLF
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalEL4I
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalF1ZY
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalF4UE
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalJKY2
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalKWFM
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalOP4Q
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalP5YD
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalR5VW
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalUG2L
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalV294
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalW1E6
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - generic: IDS-InternalW7T9
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalWHNS
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+                  - row:
+                    - cell:
+                      - checkbox
+                    - cell:
+                      - generic:
+                        - generic: I
+                        - generic: IDS-InternalXXNM
+                    - cell: Software
+                    - cell:
+                      - generic: https://ultimateqa.com
+                    - cell: India
+                    - cell: "0"
+                    - cell:
+                      - generic:
+                        - button:
+                          - img
+                        - button:
+                          - img
+              - paragraph: 19 companies
+    - region "Notifications alt+T"
+  - dialog "Add company" [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Add company" [level=2] [ref=e4]
+      - paragraph [ref=e5]: Enter the company's name and basics. You can add phones, emails, and locations later.
+      - button "Close" [ref=e6]:
+        - img [ref=e7]
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - text: Company name
+            - generic [ref=e14]: "*"
+            - generic [ref=e15]: (required)
+          - textbox "Company name (required)" [ref=e16]: IDS-InternalF4UE
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e19]: Industry
+            - textbox "Industry" [ref=e20]: Software
+          - generic [ref=e21]:
+            - generic [ref=e22]: Company code
+            - textbox "Company code" [active] [ref=e23]:
+              - /placeholder: e.g. ACME-001
+              - text: IDS-1781698072257-613
+            - alert [ref=e24]: Company code must be unique within your organisation.
+          - generic [ref=e25]:
+            - generic [ref=e26]: Size
+            - generic [ref=e27]:
+              - combobox "Company size" [ref=e28]:
+                - generic: —
+                - img
+              - combobox [ref=e29]
+          - generic [ref=e30]:
+            - generic [ref=e31]: Founded
+            - textbox "Founded" [ref=e32]:
+              - /placeholder: YYYY
+              - text: "2010"
+          - generic [ref=e33]:
+            - generic [ref=e34]: Annual revenue
+            - textbox "Annual revenue" [ref=e35]:
+              - /placeholder: "0.00"
+              - text: "1000000"
+        - generic [ref=e36]:
+          - generic [ref=e37]: Website
+          - textbox "Website" [ref=e38]:
+            - /placeholder: https://example.com
+            - text: https://ultimateqa.com
+        - group "Localization" [ref=e39]:
+          - generic [ref=e40]: Localization
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic [ref=e43]: Currency
+              - combobox "Currency" [ref=e44]:
+                - generic: USD
+                - img
+              - combobox [ref=e45]
+            - generic [ref=e46]:
+              - generic [ref=e47]: Language
+              - combobox "Language" [ref=e48]:
+                - generic: English
+                - img
+              - combobox [ref=e49]
+            - generic [ref=e50]:
+              - generic [ref=e51]: Locale
+              - combobox "Locale" [ref=e52]:
+                - generic: en-US
+                - img
+              - combobox [ref=e53]
+        - group "Tax identifiers (United States)" [ref=e54]:
+          - generic [ref=e55]: Tax identifiers (United States)
+          - paragraph [ref=e56]: "No tax identifiers added. Accepted: EIN and TIN."
+          - button "Add tax identifier" [ref=e57]:
+            - img
+            - text: Add tax identifier
+        - group "Logo" [ref=e58]:
+          - generic [ref=e59]: Logo
+          - generic [ref=e60]:
+            - generic "Company logo drop zone" [ref=e61] [cursor=pointer]:
+              - img "Company logo preview" [ref=e62]
+              - button "Company logo" [ref=e63]
+            - generic [ref=e64]:
+              - paragraph [ref=e65]: Any image — we'll help you crop it to a square. Drop, paste, or click to upload.
+              - generic [ref=e66]:
+                - button "Replace logo" [ref=e67]
+                - button "Remove" [ref=e68]:
+                  - img
+                  - text: Remove
+        - region "Locations" [ref=e69]:
+          - generic [ref=e70]:
+            - heading "Locations" [level=3] [ref=e71]
+            - button "Add location" [ref=e72]:
+              - img
+              - text: Add location
+          - paragraph [ref=e73]: Add headquarters, branches, and other locations. Phones and emails can be added later.
+          - paragraph [ref=e74]: No locations yet.
+        - region "Phones" [ref=e75]:
+          - generic [ref=e76]:
+            - heading "Phones" [level=3] [ref=e77]
+            - button "Add phone" [ref=e78]:
+              - img
+              - text: Add phone
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]:
+                  - generic [ref=e83]: Type
+                  - combobox "Type" [ref=e84]:
+                    - generic: main
+                    - img
+                  - combobox [ref=e85]
+                - generic [ref=e86]:
+                  - generic [ref=e87]: Country
+                  - combobox "Phone 1 country" [ref=e88]:
+                    - generic: US
+                    - img
+                  - combobox [ref=e89]
+              - generic [ref=e90]:
+                - generic [ref=e91]:
+                  - generic [ref=e92]: Number
+                  - textbox "Phone 1 number" [ref=e93]:
+                    - /placeholder: +1 202 555 1234
+                    - text: "+17373848458"
+                - generic [ref=e96]:
+                  - switch "Phone 1 is the primary number" [checked] [ref=e97]: ★ Primary
+                  - button "Remove phone 1" [ref=e98]:
+                    - img
+            - listitem [ref=e99]:
+              - generic [ref=e100]:
+                - generic [ref=e101]:
+                  - generic [ref=e102]: Type
+                  - combobox "Type" [ref=e103]:
+                    - generic: main
+                    - img
+                  - combobox [ref=e104]
+                - generic [ref=e105]:
+                  - generic [ref=e106]: Country
+                  - combobox "Phone 2 country" [ref=e107]:
+                    - generic: US
+                    - img
+                  - combobox [ref=e108]
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - generic [ref=e111]: Number
+                  - textbox "Phone 2 number" [ref=e112]:
+                    - /placeholder: +1 202 555 1234
+                    - text: "+17876543210"
+                - generic [ref=e115]:
+                  - switch "Set phone 2 as primary" [ref=e116]: Make primary
+                  - button "Remove phone 2" [ref=e117]:
+                    - img
+        - region "Emails" [ref=e118]:
+          - generic [ref=e119]:
+            - heading "Emails" [level=3] [ref=e120]
+            - button "Add email" [ref=e121]:
+              - img
+              - text: Add email
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - generic [ref=e124]:
+                - generic [ref=e125]: Type
+                - combobox "Type" [ref=e126]:
+                  - generic: general
+                  - img
+                - combobox [ref=e127]
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Email
+                  - textbox "Email 1 address" [ref=e131]:
+                    - /placeholder: contact@example.com
+                    - text: IDS@example.com
+                - generic [ref=e134]:
+                  - switch "Email 1 is the primary address" [checked] [ref=e135]: ★ Primary
+                  - button "Remove email 1" [ref=e136]:
+                    - img
+            - listitem [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e139]: Type
+                - combobox "Type" [ref=e140]:
+                  - generic: general
+                  - img
+                - combobox [ref=e141]
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - generic [ref=e144]: Email
+                  - textbox "Email 2 address" [ref=e145]:
+                    - /placeholder: contact@example.com
+                    - text: support@example.com
+                - generic [ref=e148]:
+                  - switch "Set email 2 as primary" [ref=e149]: Make primary
+                  - button "Remove email 2" [ref=e150]:
+                    - img
+        - region "Addresses" [ref=e151]:
+          - heading "Addresses" [level=3] [ref=e152]
+          - tablist "Address type" [ref=e153]:
+            - tab "Billing" [ref=e154]
+            - tab "Mailing" [ref=e155]
+            - tab "Headquarters" [selected] [ref=e156]
+          - tabpanel [ref=e157]:
+            - generic [ref=e159]:
+              - checkbox "Same as billing address" [checked] [ref=e160] [cursor=pointer]
+              - text: Same as billing address
+            - generic [ref=e161]:
+              - generic [ref=e162]: Address line 1
+              - textbox "headquarters address line 1" [disabled]:
+                - /placeholder: Address line 1
+                - text: Managalore
+            - generic [ref=e163]:
+              - generic [ref=e164]: Address line 2
+              - textbox "headquarters address line 2" [disabled]:
+                - /placeholder: Address line 2
+                - text: Balmata Road
+            - generic [ref=e165]:
+              - generic [ref=e166]:
+                - generic [ref=e167]: City
+                - textbox "headquarters city" [disabled]:
+                  - /placeholder: City
+                  - text: Managlore
+              - generic [ref=e168]:
+                - generic [ref=e169]: State / Province
+                - combobox "State / Province" [disabled] [ref=e170]:
+                  - generic: Select state / province
+                  - img
+                - combobox [disabled] [ref=e171]
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: Postal code
+                - textbox "headquarters postal code" [disabled]:
+                  - /placeholder: "560001"
+                  - text: "678765"
+              - generic [ref=e175]:
+                - generic [ref=e176]: Country
+                - button "headquarters country" [disabled] [ref=e177]:
+                  - generic [ref=e178]: India (IN)
+                  - img [ref=e179]
+      - generic [ref=e182]:
+        - button "Cancel" [ref=e183]
+        - button "Create company" [ref=e184]
+```
+
+# Test source
+
+```ts
+  77  | 
+  78  |         //this.editCompanyButton = page.locator('[aria-label^="Edit"]')
+  79  |         this.saveButton = page.getByRole('button', { name: 'Save' })
+  80  | 
+  81  |         // Delete Company
+  82  |        // this.deleteCompanyButton = page.locator('[aria-label^="Delete"]');
+  83  |         this.moveToTrashButton = page.getByRole('button', { name: 'Move to Trash' })
+  84  | 
+  85  | 
+  86  | 
+  87  |     }
+  88  | 
+  89  |     async Addcompanydetails(companyName,companycode) {
+  90  |         await this.companyMenuIcon.click();
+  91  |         //await expect(this.noCompaniesMessage).toBeVisible();
+  92  | 
+  93  |         await this.addCompanyButton .click();
+  94  | 
+  95  |         
+  96  |         await this.companyNameInput.fill(companyName);
+  97  |         await this.industryInput.fill('Software');
+  98  |         await this.companyCodeInput.fill(companycode);
+  99  |         await this.foundedYearInput.fill('2010');
+  100 |         await this.annualRevenueInput.fill('1000000');
+  101 |         await this.websiteInput.fill('https://ultimateqa.com');
+  102 |     }
+  103 |     async LocalizationSection() {
+  104 |         await this.currencyDropdown.click();
+  105 |         await this.page.getByRole('option', { name: 'USD — United States Dollar' }).click()
+  106 |         await this.languageDropdown.click();
+  107 |         await this.page.getByRole('option', { name: 'English' }).click();
+  108 |         await this.localeDropdown.click();
+  109 |         await this.page.getByRole('option', { name: 'English (United States) — en-US' }).click();
+  110 |     }
+  111 |     async uploadCompanyLogo() {
+  112 |         //await companyPage.uploadCompanyLogo('TestData/Company.jpeg');
+  113 |         await this.companyLogoUploadInput.setInputFiles('TestData/Company.jpeg');
+  114 |         await this.usePhotoButton.click();
+  115 |         await this.useAnywayButton.click();
+  116 |         await expect(this.replaceLogoButton).toBeVisible();
+  117 |     }
+  118 |     getPhoneNumberInput(index) {
+  119 |         return this.page.getByRole('textbox', {
+  120 |             name: `Phone ${index} number`
+  121 |         });
+  122 |     }
+  123 |     async addPhone(phoneNumber, index = 1) {
+  124 |         await this.addPhoneButton.click();
+  125 |         await this.getPhoneNumberInput(index).fill(phoneNumber);
+  126 |     }
+  127 |     getEmailAddressInput(index) {
+  128 |         return this.page.getByRole('textbox', {
+  129 |             name: `Email ${index} address`
+  130 |         });
+  131 |     }
+  132 |     async addEmail(email, index = 1) {
+  133 |         await this.addEmailButton.click();
+  134 |         await this.getEmailAddressInput(index).fill(email);
+  135 |     }
+  136 |    
+  137 |     async companyAddaddress(countryName, stateName) {
+  138 |         await this.billingAddressLine1Input.fill('Managalore');
+  139 |         await this.billingAddressLine2Input.fill('Balmata Road');
+  140 |         await this.billingCityInput.fill('Managlore');
+  141 |         await this.billingCountryDropdown.click();
+  142 |         await this.countrySearchInput.fill(countryName);
+  143 |         const options = this.countryListOptions;
+  144 | 
+  145 |         for (let i = 0; i < await options.count(); i++) {
+  146 |             const text = await options.nth(i).textContent();
+  147 | 
+  148 |             if (text?.trim() === countryName) {
+  149 |                 await options.nth(i).click();
+  150 |                 break;
+  151 |             }
+  152 |         }
+  153 |         /*
+  154 |         await this.stateProvinceDropdown.click();
+  155 |         const option = this.page.getByRole('option', { name: stateName });
+  156 |         await option.scrollIntoViewIfNeeded();
+  157 |         await option.click();
+  158 |         */
+  159 |         await this.billingPostalCodeInput.fill('678765');
+  160 | 
+  161 |         await this.mailingTab.click()
+  162 |         await this.sameAsBillingAddressCheckbox.check()
+  163 |         await this.headquartersTab.click()
+  164 |         await this.sameAsBillingAddressCheckbox.check()
+  165 | 
+  166 |     }
+  167 |     async saveCompany() {
+  168 |         await this.createCompanyButton.click();
+  169 |         await expect(this.createCompanyButton).toBeHidden({ timeout: 8000 });
+  170 |         //await expect(this.addCompanyButton).toBeVisible({ timeout: 4000 })
+  171 | 
+  172 |     }
+  173 |     async EditCompany(companyName) {
+  174 |         const companyRow = this.page.locator('tbody tr').filter({ hasText: companyName });
+  175 |         await companyRow.scrollIntoViewIfNeeded();
+  176 |         await expect(companyRow).toHaveCount(1);
+> 177 |         await companyRow.locator('[aria-label^="Edit"]').click();
+      |                                                          ^ TimeoutError: locator.click: Timeout 15000ms exceeded.
+  178 |         await expect(this.page.getByText('Edit company')).toBeVisible();
+  179 |     }
+  180 |     async clickSaveButton() {
+  181 |         await this.saveButton.click();
+  182 |         await expect(this.saveButton).toBeHidden({ timeout: 5000 });
+  183 |     }
+  184 |     // Confirmation Message (dynamic)
+  185 |     async deleteCompany(companyName) {
+  186 |         const companyRow = this.page.locator('tbody tr').filter({ hasText: companyName });
+  187 |         await companyRow.scrollIntoViewIfNeeded();
+  188 |         await expect(companyRow).toHaveCount(1);
+  189 |         await companyRow.locator('[aria-label^="Delete"]').click()
+  190 |         await expect(this.page.getByText(`Move "${companyName}" to Trash?`)).toBeVisible({ timeout: 5000 });
+  191 |         await this.moveToTrashButton.click()
+  192 |         await expect(this.moveToTrashButton).toBeHidden({ timeout: 6000 })
+  193 |         await expect(this.addCompanyButton ).toBeVisible({ timeout: 6000 })
+  194 |         //await expect(this.page.getByText('No companies yet')).toBeVisible();
+  195 |     }
+  196 | }
+  197 | 
+  198 | 
+  199 | 
+  200 | 
+```

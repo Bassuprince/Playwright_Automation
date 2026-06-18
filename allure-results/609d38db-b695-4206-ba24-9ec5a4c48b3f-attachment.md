@@ -1,0 +1,489 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Contcats-regression.spec.js >> Contact regression tests >> Add company with complete details and validate in UI
+- Location: Testcontact/Contcats-regression.spec.js:17:9
+
+# Error details
+
+```
+ReferenceError: contactAddCompanyPage is not defined
+```
+
+```
+Error: page.waitForResponse: Test ended.
+```
+
+# Page snapshot
+
+```yaml
+- generic:
+  - generic:
+    - generic:
+      - link:
+        - /url: "#main-content"
+        - text: Skip to main content
+      - navigation:
+        - generic:
+          - generic:
+            - img
+            - generic: Contacts
+          - button [expanded]:
+            - generic: Collapse sidebar
+            - img
+        - generic:
+          - generic:
+            - generic: Workspace
+            - list:
+              - listitem:
+                - link:
+                  - /url: /
+                  - img
+                  - generic: Contacts
+              - listitem:
+                - link:
+                  - /url: /companies
+                  - img
+                  - generic: Companies
+              - listitem:
+                - link:
+                  - /url: /trash
+                  - img
+                  - generic: Trash
+              - listitem:
+                - link:
+                  - /url: /tags
+                  - img
+                  - generic: Tags
+          - generic:
+            - generic: Admin
+            - list:
+              - listitem:
+                - link:
+                  - /url: /admin/custom-fields
+                  - img
+                  - generic: Custom Fields
+              - listitem:
+                - link:
+                  - /url: /users
+                  - img
+                  - generic: User Management
+          - generic:
+            - list:
+              - listitem:
+                - link:
+                  - /url: /settings
+                  - img
+                  - generic: Settings
+      - generic:
+        - banner:
+          - link:
+            - /url: /
+            - img
+            - generic: Contacts
+          - generic:
+            - button:
+              - img
+              - generic: New
+            - link:
+              - /url: /notifications
+              - img
+            - button:
+              - generic: Open account menu
+              - generic: RR
+        - main:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: Companies
+                - paragraph: Click a row to view details.
+              - generic:
+                - button:
+                  - img
+                  - text: Import
+                - button:
+                  - img
+                  - text: Export
+                - button:
+                  - img
+                  - text: Add company
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - searchbox
+                - combobox:
+                  - generic: Name (A–Z)
+                  - img
+            - status:
+              - img
+              - paragraph: No companies yet
+              - paragraph: Click Add company to create one.
+    - region "Notifications alt+T"
+  - dialog "Add company" [ref=e2]:
+    - generic [ref=e3]:
+      - heading "Add company" [level=2] [ref=e4]
+      - paragraph [ref=e5]: Enter the company's name and basics. You can add phones, emails, and locations later.
+      - button "Close" [ref=e6]:
+        - img [ref=e7]
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - text: Company name
+            - generic [ref=e14]: "*"
+            - generic [ref=e15]: (required)
+          - textbox "Company name (required)" [ref=e16]: IDS-InternalH75G
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - generic [ref=e19]: Industry
+            - textbox "Industry" [ref=e20]: Software
+          - generic [ref=e21]:
+            - generic [ref=e22]: Company code
+            - textbox "Company code" [ref=e23]:
+              - /placeholder: e.g. ACME-001
+              - text: IDS-1781680537604-941
+          - generic [ref=e24]:
+            - generic [ref=e25]: Size
+            - generic [ref=e26]:
+              - combobox "Company size" [ref=e27]:
+                - generic: —
+                - img
+              - combobox [ref=e28]
+          - generic [ref=e29]:
+            - generic [ref=e30]: Founded
+            - textbox "Founded" [ref=e31]:
+              - /placeholder: YYYY
+              - text: "2010"
+          - generic [ref=e32]:
+            - generic [ref=e33]: Annual revenue
+            - textbox "Annual revenue" [ref=e34]:
+              - /placeholder: "0.00"
+              - text: "1000000"
+        - generic [ref=e35]:
+          - generic [ref=e36]: Website
+          - textbox "Website" [ref=e37]:
+            - /placeholder: https://example.com
+            - text: https://ultimateqa.com
+        - group "Localization" [ref=e38]:
+          - generic [ref=e39]: Localization
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: Currency
+              - combobox "Currency" [ref=e43]:
+                - generic: USD
+                - img
+              - combobox [ref=e44]
+            - generic [ref=e45]:
+              - generic [ref=e46]: Language
+              - combobox "Language" [ref=e47]:
+                - generic: English
+                - img
+              - combobox [ref=e48]
+            - generic [ref=e49]:
+              - generic [ref=e50]: Locale
+              - combobox "Locale" [ref=e51]:
+                - generic: en-US
+                - img
+              - combobox [ref=e52]
+        - group "Tax identifiers (United States)" [ref=e53]:
+          - generic [ref=e54]: Tax identifiers (United States)
+          - paragraph [ref=e55]: "No tax identifiers added. Accepted: EIN and TIN."
+          - button "Add tax identifier" [ref=e56]:
+            - img
+            - text: Add tax identifier
+        - group "Logo" [ref=e57]:
+          - generic [ref=e58]: Logo
+          - generic [ref=e59]:
+            - generic "Company logo drop zone" [ref=e60] [cursor=pointer]:
+              - img "Company logo preview" [ref=e61]
+              - button "Company logo" [ref=e62]
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: Any image — we'll help you crop it to a square. Drop, paste, or click to upload.
+              - generic [ref=e65]:
+                - button "Replace logo" [ref=e66]
+                - button "Remove" [ref=e67]:
+                  - img
+                  - text: Remove
+        - region "Locations" [ref=e68]:
+          - generic [ref=e69]:
+            - heading "Locations" [level=3] [ref=e70]
+            - button "Add location" [ref=e71]:
+              - img
+              - text: Add location
+          - paragraph [ref=e72]: Add headquarters, branches, and other locations. Phones and emails can be added later.
+          - paragraph [ref=e73]: No locations yet.
+        - region "Phones" [ref=e74]:
+          - generic [ref=e75]:
+            - heading "Phones" [level=3] [ref=e76]
+            - button "Add phone" [ref=e77]:
+              - img
+              - text: Add phone
+          - list [ref=e78]:
+            - listitem [ref=e79]:
+              - generic [ref=e80]:
+                - generic [ref=e81]:
+                  - generic [ref=e82]: Type
+                  - combobox "Type" [ref=e83]:
+                    - generic: main
+                    - img
+                  - combobox [ref=e84]
+                - generic [ref=e85]:
+                  - generic [ref=e86]: Country
+                  - combobox "Phone 1 country" [ref=e87]:
+                    - generic: US
+                    - img
+                  - combobox [ref=e88]
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - generic [ref=e91]: Number
+                  - textbox "Phone 1 number" [ref=e92]:
+                    - /placeholder: +1 202 555 1234
+                    - text: "+17373848458"
+                - generic [ref=e95]:
+                  - switch "Phone 1 is the primary number" [checked] [ref=e96]: ★ Primary
+                  - button "Remove phone 1" [ref=e97]:
+                    - img
+            - listitem [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - generic [ref=e101]: Type
+                  - combobox "Type" [ref=e102]:
+                    - generic: main
+                    - img
+                  - combobox [ref=e103]
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Country
+                  - combobox "Phone 2 country" [ref=e106]:
+                    - generic: US
+                    - img
+                  - combobox [ref=e107]
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]: Number
+                  - textbox "Phone 2 number" [ref=e111]:
+                    - /placeholder: +1 202 555 1234
+                    - text: "+17876543210"
+                - generic [ref=e114]:
+                  - switch "Set phone 2 as primary" [ref=e115]: Make primary
+                  - button "Remove phone 2" [ref=e116]:
+                    - img
+        - region "Emails" [ref=e117]:
+          - generic [ref=e118]:
+            - heading "Emails" [level=3] [ref=e119]
+            - button "Add email" [ref=e120]:
+              - img
+              - text: Add email
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - generic [ref=e123]:
+                - generic [ref=e124]: Type
+                - combobox "Type" [ref=e125]:
+                  - generic: general
+                  - img
+                - combobox [ref=e126]
+              - generic [ref=e127]:
+                - generic [ref=e128]:
+                  - generic [ref=e129]: Email
+                  - textbox "Email 1 address" [ref=e130]:
+                    - /placeholder: contact@example.com
+                    - text: IDS@example.com
+                - generic [ref=e133]:
+                  - switch "Email 1 is the primary address" [checked] [ref=e134]: ★ Primary
+                  - button "Remove email 1" [ref=e135]:
+                    - img
+            - listitem [ref=e136]:
+              - generic [ref=e137]:
+                - generic [ref=e138]: Type
+                - combobox "Type" [ref=e139]:
+                  - generic: general
+                  - img
+                - combobox [ref=e140]
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - generic [ref=e143]: Email
+                  - textbox "Email 2 address" [ref=e144]:
+                    - /placeholder: contact@example.com
+                    - text: support@example.com
+                - generic [ref=e147]:
+                  - switch "Set email 2 as primary" [ref=e148]: Make primary
+                  - button "Remove email 2" [ref=e149]:
+                    - img
+        - region "Addresses" [ref=e150]:
+          - heading "Addresses" [level=3] [ref=e151]
+          - tablist "Address type" [ref=e152]:
+            - tab "Billing" [ref=e153]
+            - tab "Mailing" [ref=e154]
+            - tab "Headquarters" [selected] [ref=e155]
+          - tabpanel [ref=e156]:
+            - generic [ref=e158]:
+              - checkbox "Same as billing address" [checked] [active] [ref=e159] [cursor=pointer]
+              - text: Same as billing address
+            - generic [ref=e160]:
+              - generic [ref=e161]: Address line 1
+              - textbox "headquarters address line 1" [disabled]:
+                - /placeholder: Address line 1
+                - text: Managalore
+            - generic [ref=e162]:
+              - generic [ref=e163]: Address line 2
+              - textbox "headquarters address line 2" [disabled]:
+                - /placeholder: Address line 2
+                - text: Balmata Road
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - generic [ref=e166]: City
+                - textbox "headquarters city" [disabled]:
+                  - /placeholder: City
+                  - text: Managlore
+              - generic [ref=e167]:
+                - generic [ref=e168]: State / Province
+                - combobox "State / Province" [disabled] [ref=e169]:
+                  - generic: Select state / province
+                  - img
+                - combobox [disabled] [ref=e170]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic [ref=e173]: Postal code
+                - textbox "headquarters postal code" [disabled]:
+                  - /placeholder: "560001"
+                  - text: "678765"
+              - generic [ref=e174]:
+                - generic [ref=e175]: Country
+                - button "headquarters country" [disabled] [ref=e176]:
+                  - generic [ref=e177]: India (IN)
+                  - img [ref=e178]
+      - generic [ref=e181]:
+        - button "Cancel" [ref=e182]
+        - button "Create company" [ref=e183]
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect } from '@playwright/test';
+  2   | import { registerWorkspace } from '../Util_files_caf/Contactregister';
+  3   | import { genEmail, genInviteEmail, genCompanyName, genCompanyCode, genMobileNumber, genTag } from '../Util_files_caf/generators';
+  4   | import { getActivationUrl, activateFromMail, acceptInviteFromMail, Logintoapplication } from '../Util_files_caf/mailpitHelper';
+  5   | import { ContactsLoginPage } from '../pagecontact/ContactsLoginPage'
+  6   | import { ContactAddcompanyPage } from '../pagecontact/ContactAddcompanyPage'
+  7   | import { Contactaddcontact } from '../pagecontact/Contactaddcontact'
+  8   | import { contactaddTags } from '../pagecontact/contactaddTags'
+  9   | import { contactCustomfields } from '../pagecontact/contactCustomfields'
+  10  | import { contactusermanagement } from '../pagecontact/contactuserusermanagement'
+  11  | import { ContactTrash } from '../pagecontact/ContactTrash';
+  12  | //import { companypage } from '../pagecontact/companypage';
+  13  | 
+  14  | test.describe('Contact regression tests', () => {
+  15  |     test.setTimeout(600000);
+  16  | 
+  17  |     test('Add company with complete details and validate in UI', async ({ page }) => {
+  18  | 
+  19  |         const email = genEmail('rajesh', 'idsinternal.com');
+  20  |         const InviteEmail = genInviteEmail('Basava', 'idsinternal.com');
+  21  |         const companyName = genCompanyName();
+  22  |         const Companycode = genCompanyCode();
+  23  |         const mobileNumber = genMobileNumber('+91');
+  24  |         const Tags = genTag();
+  25  |         const Tag1 = genTag();
+  26  | 
+  27  |         await page.goto('https://contacts-app-qa.idsinternal.com/');
+  28  |         await page.getByRole('link', { name: 'Start your workspace' }).first().click();
+  29  | 
+  30  |         await registerWorkspace(page, 'USA', email);
+  31  |         await getActivationUrl(page, email);
+  32  |         await activateFromMail(page, email);
+  33  | 
+  34  |         await Logintoapplication(page, email, 'Password@123');
+  35  | 
+  36  |         const logintoapplication = new ContactsLoginPage(page)
+  37  |         const addcompanydata = new ContactAddcompanyPage(page)
+  38  |         const addcontactdata = new Contactaddcontact(page)
+  39  |         const addNewTag = new contactaddTags(page)
+  40  |         const addCustonfields = new contactCustomfields(page)
+  41  |         const addusermanagement = new contactusermanagement(page)
+  42  |         const RestoreContact = new ContactTrash(page)
+  43  |         /*
+  44  |                 //======Login=====
+  45  |                 await logintoapplication.goto()
+  46  |                 await logintoapplication.login("rajesh1781256119257@idsinternal.com")
+  47  |           */
+  48  | 
+  49  |         //Add first email & Phone number
+  50  |         await addcompanydata.Addcompanydetails(companyName, Companycode)
+  51  |         await addcompanydata.addPhone('+17373848458');
+  52  |         await addcompanydata.addEmail('IDS@example.com');
+  53  |         // Add second email & Phone number
+  54  |         await addcompanydata.addPhone('+17876543210', 2);
+  55  |         await addcompanydata.addEmail('support@example.com', 2);
+  56  |         await addcompanydata.LocalizationSection()
+  57  |         await addcompanydata.uploadCompanyLogo()
+  58  |         await addcompanydata.companyAddaddress('India', 'Karnataka')
+> 59  |         const responsePromise = page.waitForResponse(
+      |                                      ^ Error: page.waitForResponse: Test ended.
+  60  |             response =>
+  61  |                 response.url().includes('/v1/companies') &&
+  62  |                 response.request().method() === 'POST' &&
+  63  |                 response.status() === 201
+  64  |         );
+  65  | 
+  66  |         await contactAddCompanyPage.saveButton.click();
+  67  | 
+  68  |         const response = await responsePromise;
+  69  |         await addcompanydata.saveCompany()
+  70  | 
+  71  |         //========Edit===========
+  72  |         await addcompanydata.EditCompany(companyName)
+  73  |         await addcompanydata.addPhone('+17373848458');
+  74  |         await addcompanydata.addEmail('IDSsdss@example.com')
+  75  |         await addcompanydata.clickSaveButton()
+  76  |         await addcompanydata.DeletCompany(companyName)
+  77  |         //===Restore====
+  78  |         await RestoreContact.RestoreCompany(companyName)
+  79  |         await page.pause()
+  80  | 
+  81  | 
+  82  |         //====Add Contact======
+  83  |         await addcontactdata.usercontactdetails()
+  84  |         await addcontactdata.organisationDetailsandWhatsAppFax()
+  85  |         //await addcontactdata.uploadCompanyLogocontact()
+  86  |         await addcontactdata.addaddress('India', 'Karnataka')
+  87  |         await addcontactdata.Addthemoredetails(mobileNumber)
+  88  |         await addcontactdata.addnewtag(Tag1)
+  89  |         await addcontactdata.savecontact()
+  90  | 
+  91  | 
+  92  |         //await addcontactdata.Editcontact(mobileNumber)
+  93  |         //await addcontactdata.organisationDetailsandWhatsAppFax()
+  94  |         //await addcompanydata.clickSaveButton()
+  95  |         await addcontactdata.Deletcontact(mobileNumber)
+  96  |         //=====Restore=======
+  97  |         await RestoreContact.RestoreContact(mobileNumber)
+  98  | 
+  99  |         //==Create Tags====
+  100 |         await addNewTag.createnewtag(Tags)
+  101 |         //===AddCustom Fields====
+  102 |         await page.pause()
+  103 |         await addCustonfields.AddCustomFileds()
+  104 |         await addCustonfields.EditCustomfields()
+  105 |         await addCustonfields.DeleteCustomfields()
+  106 |         //==Add user management===
+  107 | 
+  108 |         await addusermanagement.InviteUserMnagement(InviteEmail)
+  109 |         await logintoapplication.logout()
+  110 |         await acceptInviteFromMail(page, InviteEmail, 'USA', { firstName: 'Adithya', middleName: 'A', surname: 'Patils', password: 'Password@123' })
+  111 |         await logintoapplication.login(InviteEmail)
+  112 |         await logintoapplication.logout()
+  113 | 
+  114 | 
+  115 |     })
+  116 | 
+  117 | 
+  118 | 
+  119 | });
+```
