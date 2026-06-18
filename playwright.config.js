@@ -48,7 +48,8 @@ export default defineConfig({
     screenshot: 'on',              // record ALL screenshots
     video: 'retain-on-failure',                   // record ALL videos - this was the issue!
     videosDir: './test-results/videos',
-    trace: 'on',                   // record ALL traces
+    trace: 'on',                              // record ALL traces
+   // ...devices['Pixel 7'],
 
     launchOptions: {
       slowMo: process.env.SLOW_MO ? parseInt(process.env.SLOW_MO) : 0,

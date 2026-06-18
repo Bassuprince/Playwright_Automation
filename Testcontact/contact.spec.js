@@ -32,7 +32,7 @@ test.describe('Contact Creation', () => {
         await addcontactdata.savecontact()
         await expect(page.locator('tbody tr').first()).toBeVisible()
   });
-  test('@sanity Add contact with profile image', async ({ page }) => {
+  test('@sanity @Regression Add contact with profile image', async ({ page }) => {
      const mobileNumber = `98${Date.now().toString().slice(-8)}`;
         await addcontactdata.usercontactdetails()
         await addcontactdata.organisationDetailsandWhatsAppFax()
@@ -54,7 +54,7 @@ test('@sanity Add contact with create tag in in contact screen ', async ({ page 
         await addcontactdata.savecontact()
         await expect(page.locator('tbody tr').first()).toBeVisible()
 })
-test('@sanity Add public contact with all details ', async ({ page }) => {
+test('@sanity @Regression Add public contact with all details ', async ({ page }) => {
      const mobileNumber = `98${Date.now().toString().slice(-8)}`;
      const taglable = genTag()
         await addcontactdata.usercontactdetails()

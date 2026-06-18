@@ -7,3 +7,14 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .refact/
+
+node_modules/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+blob-report/
+*.zip
+*.mp4
+*.webm
+*.trace
